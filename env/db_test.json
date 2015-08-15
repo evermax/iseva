@@ -1,0 +1,10 @@
+{
+  "URLs": {
+    "/test": {
+        "JSON": {"field1": "value1","field2": "value2"}
+    },
+    "/test/other": {
+        "JSON": {"field3": {"sub3field1": "value1","sub3field2": "value2"},"field4": "value4"}
+    }
+  }
+}
