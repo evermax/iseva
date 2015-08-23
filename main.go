@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/evermax/json-server/env"
+	"github.com/evermax/iseva/env"
 )
 
 const (
