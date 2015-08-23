@@ -1,4 +1,8 @@
 #Iseva
+
+[![Build Status](https://img.shields.io/travis/evermax/iseva.svg?style=flat-square)](https://travis-ci.org/evermax/iseva)
+[![Build Status](https://drone.io/github.com/evermax/iseva/status.png)](https://drone.io/github.com/evermax/iseva/latest)
+
 ## A JSON server for frontend developer
 
 This project is meant to help intensive frontend development to rely less on the backend development.
