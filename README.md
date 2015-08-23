@@ -2,6 +2,7 @@
 
 [![Build Status](https://img.shields.io/travis/evermax/iseva.svg?style=flat-square)](https://travis-ci.org/evermax/iseva)
 [![Build Status](https://drone.io/github.com/evermax/iseva/status.png)](https://drone.io/github.com/evermax/iseva/latest)
+[![Coverage Status](https://coveralls.io/repos/evermax/iseva/badge.png?branch=master)](https://coveralls.io/r/evermax/iseva?branch=master)
 
 ## A JSON server for frontend developer
 
