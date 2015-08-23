@@ -1,0 +1,9 @@
+{
+    "/test": {
+        "json": {"key":"{{var}}"}
+    }
+}
+---
+{
+    "variables": {"var":"value"}
+}

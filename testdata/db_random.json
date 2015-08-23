@@ -1,0 +1,19 @@
+{
+    "urls": {
+        "/test/randint": {
+            "json": {"field": {{randint}}}
+        }
+    }
+}
+---
+{
+    "functions": {
+        "rand": {
+            "randint": {
+                "type": "int",
+                "max": 50,
+                "min": 0
+            }
+        }
+    }
+}

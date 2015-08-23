@@ -1,0 +1,13 @@
+{
+    "urls": {
+        "/test/variables": {
+            "json": {"field5": "{{.var1}}"}
+        }
+    }
+}
+---
+{
+    "variables": {
+        "var1": "test_var1"
+    }
+}
