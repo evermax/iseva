@@ -76,6 +76,19 @@ You can specify the variables you want in that fashion inside the templating are
     ...
   }
 ```
+Variables can as well be objects:
+
+```
+"variables": {
+    "name1": {
+        "field1": "value1",
+        "field2": "value2",
+        "field3": {
+            "field4": "value4",
+            "field5": [3, 5, 6]
+        }
+    }
+}
 
 Then you can use then inside the actual JSON area in the following way:
 
@@ -83,7 +96,7 @@ Then you can use then inside the actual JSON area in the following way:
   "urls": {
     "/test/variables": {
       "json": {
-        "field1": "{{.name1}}",
+        "field1": {{.name1}},
         "field2": "",
       },
     },
