@@ -293,7 +293,7 @@ func TestRandomStringSize(t *testing.T) {
 	}
 	result := f()
 	if len(result) != params.Randoms[key].Size {
-		t.Fatalf("The size of the string %d isn't the right one: expected %d, got: %d", result, params.Randoms[key].Size, len(result))
+		t.Fatalf("The size of the string %s isn't the right one: expected %d, got: %d", result, params.Randoms[key].Size, len(result))
 	}
 }
 

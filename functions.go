@@ -67,61 +67,61 @@ func (fp funcParams) parse() (fcts map[string]interface{}) {
 					min := arrParam.Min
 					max := arrParam.Max
 					fcts[name] = func() (string, error) {
-						var array []string = make([]string, size)
+						var array = make([]string, size)
 						for i := 0; i < size; i++ {
 							length := arrParam.Min + rand.Intn(max-min)
 							array[i] = util.RandString(length)
 						}
-						if arr, err := json.Marshal(array); err != nil {
+						arr, err := json.Marshal(array)
+						if err != nil {
 							return "", err
-						} else {
-							return string(arr), nil
 						}
+						return string(arr), nil
 					}
 				case "int":
 					size := arrParam.ArraySize
 					min := arrParam.Min
 					max := arrParam.Max
 					fcts[name] = func() (string, error) {
-						var array []int = make([]int, size)
+						var array = make([]int, size)
 						for i := 0; i < size; i++ {
 							array[i] = min + rand.Intn(max-min)
 						}
-						if arr, err := json.Marshal(array); err != nil {
+						arr, err := json.Marshal(array)
+						if err != nil {
 							return "", err
-						} else {
-							return string(arr), nil
 						}
+						return string(arr), nil
 					}
 				case "float":
 					size := arrParam.ArraySize
 					min := arrParam.Min
 					max := arrParam.Max
 					fcts[name] = func() (string, error) {
-						var array []float64 = make([]float64, size)
+						var array = make([]float64, size)
 						for i := 0; i < size; i++ {
 							array[i] = float64(min) + rand.Float64()*float64(max-min)
 						}
-						if arr, err := json.Marshal(array); err != nil {
+						arr, err := json.Marshal(array)
+						if err != nil {
 							return "", err
-						} else {
-							return string(arr), nil
 						}
+						return string(arr), nil
 					}
 				}
 			} else if arrParam.Size > 0 {
 				if arrParam.Type == "string" {
 					size := arrParam.ArraySize
 					fcts[name] = func() (string, error) {
-						var array []string = make([]string, size)
+						var array = make([]string, size)
 						for i := 0; i < size; i++ {
 							array[i] = util.RandString(size)
 						}
-						if arr, err := json.Marshal(array); err != nil {
+						arr, err := json.Marshal(array)
+						if err != nil {
 							return "", err
-						} else {
-							return string(arr), err
 						}
+						return string(arr), nil
 					}
 				}
 			}
