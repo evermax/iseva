@@ -1,13 +1,17 @@
 {
     "urls": {
         "/test/variables": {
-            "json": {"field5": "{{.var1}}"}
+            "json": {"field5": {{.var1}}}
+        },
+        "/test/objects": {
+            "json": {{.var2}}
         }
     }
 }
 ---
 {
     "variables": {
-        "var1": "test_var1"
+        "var1": "test_var1",
+        "var2": { "field3": { "test": "value" } }
     }
 }

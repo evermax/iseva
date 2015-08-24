@@ -76,6 +76,11 @@ func TestVariables(t *testing.T) {
 			expectedStatus:  http.StatusOK,
 			expectedContent: `{"field5": "test_var1"}`,
 		},
+		{
+			requestPath:     "/test/objects",
+			expectedStatus:  http.StatusOK,
+			expectedContent: `{ "field3": { "test": "value" } }`,
+		},
 	}
 	for i, test := range tests {
 		req, err := http.NewRequest("GET", test.requestPath, nil)

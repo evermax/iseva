@@ -93,8 +93,8 @@ type raw struct {
 }
 
 type parameters struct {
-	Variables map[string]string `json:"variables"`
-	Functions *funcParams       `json:"functions"`
+	Variables map[string]json.RawMessage `json:"variables"`
+	Functions *funcParams                `json:"functions"`
 }
 
 func (params parameters) parse() tmplParams {
@@ -102,8 +102,12 @@ func (params parameters) parse() tmplParams {
 	if params.Functions != nil {
 		functions = params.Functions.parse()
 	}
+	var variables = make(map[string]string)
+	for k, v := range params.Variables {
+		variables[k] = string(v)
+	}
 	return tmplParams{
-		Var:  params.Variables,
+		Var:  variables,
 		Func: functions,
 	}
 }
