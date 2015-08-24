@@ -89,6 +89,7 @@ Variables can as well be objects:
         }
     }
 }
+```
 
 Then you can use then inside the actual JSON area in the following way:
 
