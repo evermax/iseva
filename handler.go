@@ -16,8 +16,9 @@ type JSONHandler struct {
 	dbc      dbContent
 }
 
-func (handler *JSONHandler) Init() error {
-	return handler.getDBData()
+func NewJSONHandler(db string, isStatic bool) (*JSONHandler, error) {
+	handler := &JSONHandler{DB: db, IsStatic: isStatic}
+	return handler, handler.getDBData()
 }
 
 func (handler *JSONHandler) getDBData() error {

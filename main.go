@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"net/http"
+	"os"
 )
 
 const (
@@ -21,8 +22,11 @@ func init() {
 func main() {
 	flag.Parse()
 
-	handler := JSONHandler{DB: dbFile, IsStatic: staticGen}
-	handler.Init()
+	handler, err := NewJSONHandler(dbFile, staticGen)
+	if err != nil {
+		fmt.Printf("Problem when starting the server: %v\n", err)
+		os.Exit(1)
+	}
 	http.HandleFunc("/", handler.ServeHTTP)
 	fmt.Print("Starting server\n")
 	http.ListenAndServe(":3000", nil)
